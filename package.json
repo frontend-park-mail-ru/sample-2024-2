@@ -1,0 +1,15 @@
+{
+  "name": "sample-2024-2",
+  "version": "1.0.0",
+  "description": "Классный проект",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=* && node ./server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "4.3.7"
+  }
+}

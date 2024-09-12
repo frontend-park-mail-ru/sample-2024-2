@@ -1,0 +1,11 @@
+h1 {
+    color:aqua;
+}
+
+.animal {
+    color: aquamarine;
+}
+
+.animal:hover {
+    color: blue;
+}
