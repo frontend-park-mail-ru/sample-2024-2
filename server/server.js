@@ -68,7 +68,11 @@ const users = {
 const ids = {};
 
 function formUser(user) {
-    return { ...user, images: user.images.map((id) => images[id]) };
+    return {
+        ...user,
+        password: undefined,
+        images: user.images.map((id) => ({ ...images[id], id }))
+    };
 }
 
 app.post('/signup', (req, res) => {
@@ -138,7 +142,9 @@ app.get('/feed', (req, res) => {
 
     const userSessionImagesSet = new Set(users[emailSession].images);
 
-    const result2 = images.filter((_, id) => !userSessionImagesSet.has(id));
+    const result2 = images
+        .map((_, id) => ({ ..._, id }))
+        .filter((_, id) => !userSessionImagesSet.has(id));
 
     res.json(result2);
 });
@@ -153,7 +159,7 @@ app.post('/like', (req, res) => {
     const { id: imageId } = req.body;
     images[imageId].likes++;
 
-    res.status(200);
+    res.status(200).json({ status: 'ok' });
 });
 
 const port = process.env.PORT || 3000;
