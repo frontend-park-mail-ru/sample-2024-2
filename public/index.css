@@ -1,11 +1,41 @@
-h1 {
-    color:aqua;
+body {
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-.animal {
-    color: aquamarine;
+#root {
+    display: grid;
+    grid-template-areas:
+            "header header"
+            "menu   content";
+
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: min-content 1fr;
 }
 
-.animal:hover {
-    color: blue;
+aside {
+    grid-area: menu;
+    font-size: 40px;
+    padding-inline-start: 20px;
+}
+
+main {
+    grid-area: content;
+    padding: 0 40px 40px
+}
+
+a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+}
+
+input {
+    display: block;
+    height: 60px;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.active {
+    font-weight: bold;
 }
