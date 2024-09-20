@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=* && node ./server/server.js"
+    "prestart": "npm run compile:templates",
+    "start": "DEBUG=* && node ./server/server.js",
+    "compile:templates": "handlebars public/components/Menu/Menu.hbs -f public/components/Menu/Menu.precompiled.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.7",
     "express": "^4.21.0",
+    "handlebars": "^4.7.8",
     "morgan": "^1.10.0",
     "uuid": "^10.0.0"
   }

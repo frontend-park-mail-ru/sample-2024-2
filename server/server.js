@@ -10,6 +10,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
+app.use(express.static(path.resolve(__dirname, '..', 'node_modules')));
 app.use(express.static(path.resolve(__dirname, 'images')));
 app.use(body.json());
 app.use(cookie());
