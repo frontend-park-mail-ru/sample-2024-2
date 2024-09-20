@@ -1,0 +1,7 @@
+.menu-item {
+    color: darkviolet;
+}
+
+.active {
+    font-weight: bold;
+}
