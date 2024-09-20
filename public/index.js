@@ -31,7 +31,7 @@ const config = {
       href: '/profile',
       text: safe('Профиль'),
       // Вектор атаки XSS. Работает, если делать рендер через строку. Для ознакомления!
-      // text: safe('<iframe onload="alert(1234)"></iframe>'),
+      // text: '<iframe onload="alert(1234)"></iframe>',
       render: renderProfile,
     }
   }
